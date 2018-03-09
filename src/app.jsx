@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Clients from './containers/sidebar/clients';
+import Sidebar from './components/layouts/sidebar';
 
 class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <Clients />
-            </div>
-        );
-    }
+	render() {
+		return (
+			<div>
+				<Sidebar />
+			</div>
+		);
+	}
 }
 
 export default App;

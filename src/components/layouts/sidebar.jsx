@@ -1,12 +1,12 @@
 import React from 'react';
-import ClientList from '../../containers/sidebar/client-list';
+import Clients from '../../containers/sidebar/clients';
 
 const Sidebar = () => {
-    return (
-        <div>
-            <ClientList />
-        </div>
-    );
+	return (
+		<div>
+			<Clients />
+		</div>
+	);
 };
 
 export default Sidebar;

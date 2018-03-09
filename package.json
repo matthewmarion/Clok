@@ -8,8 +8,8 @@
     "start": "electron ./dist/main.js",
     "build:test": "webpack --config webpack.tests.config.js",
     "test": "jest",
-    "lint": "eslint ./src/**/*.js",
-    "fixlint": "eslint ./src/**/* --fix"
+    "lint": "eslint ./src/**/*.jsx",
+    "fixlint": "eslint ./src/**/*.jsx --fix"
   },
   "keywords": [
     "Electron",
