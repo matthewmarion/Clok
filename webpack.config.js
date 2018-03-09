@@ -11,7 +11,6 @@ const commonConfig = {
             {
                 test: /.jsx?$/,
                 exclude: /node_modules/,
-                include: path.join(__dirname, 'src'),
                 use: [
                     {
                         loader: 'babel-loader',
@@ -41,7 +40,7 @@ module.exports = [
     Object.assign(
       {
         target: 'electron-main',
-        entry: { main: './src/main.js' }
+        entry: { main: './main.js' }
       },
       commonConfig),
     Object.assign(
