@@ -22,7 +22,7 @@ class Clients extends React.Component {
 		alert('Added new client: ' + newClient);
 		this.setState(prevState => ({
 			clients: prevState.clients.concat(newClient),
-			clientName: ''
+			newClient: ''
 		}));
 		event.preventDefault();
 	}
