@@ -1,6 +1,6 @@
 import React from 'react';
-import ClientForm from '../../components/clients/add-client';
-import ClientList from '../../components/clients/client-list';
+import ClientForm from './add-client';
+import ClientList from './client-list';
 
 class Clients extends React.Component {
 	constructor(props) {

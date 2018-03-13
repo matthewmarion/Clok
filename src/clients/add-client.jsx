@@ -1,5 +1,5 @@
 import React from 'react';
-import Client from '../../containers/sidebar/clients';
+import Client from './clients';
 
 const Form = (props) => {
 	return (

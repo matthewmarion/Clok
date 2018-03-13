@@ -1,5 +1,5 @@
 import React from 'react';
-import Clients from '../../containers/sidebar/clients';
+import Clients from '../clients/clients';
 
 const Sidebar = () => {
 	return (
