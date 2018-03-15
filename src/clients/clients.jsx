@@ -49,7 +49,7 @@ class Clients extends React.Component {
 const mapStateToProps = (state) => {
 	return {
 		clients: state.clients
-	}
+	};
 };
 
 const matchDispatchToProps = (dispatch) => {
