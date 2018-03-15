@@ -7,7 +7,7 @@ const ClientList = (props) => {
 				{props.clients.map((client, i) =>
         	    <li key={i}>
 						{client}
-					</li>
+				</li>
 				)}
 			</ul>
 		</div>
