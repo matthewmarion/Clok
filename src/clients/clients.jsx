@@ -51,8 +51,8 @@ class Clients extends React.Component {
 				</ul>
 				<ClientList clients={this.props.clients.clientList}/>
 				<SelectClient 
-				onChange={this.handleSelectClientChange}
-				clients={this.props.clients.clientList} />
+					onChange={this.handleSelectClientChange}
+					clients={this.props.clients.clientList} />
 			</div>
 		);
 	}

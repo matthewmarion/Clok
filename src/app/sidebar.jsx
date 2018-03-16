@@ -4,12 +4,12 @@ import '../../public/css/sidebar.css';
 
 const Sidebar = () => {
 	return (
-			<nav id="sidebar">
-				<div className="sidebar-header">
-					<h1>Clok.io</h1>
-				</div>
-				<Clients />
-			</nav>
+		<nav id="sidebar">
+			<div className="sidebar-header">
+				<h1>Clok.io</h1>
+			</div>
+			<Clients />
+		</nav>
 	);
 };
 
