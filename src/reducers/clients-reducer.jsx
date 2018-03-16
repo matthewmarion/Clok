@@ -1,5 +1,6 @@
 const intitialState = {
-	clientList: []
+	clientList: [],
+	activeClient: ''
 };
 
 export default (state=intitialState, action) => {
@@ -7,6 +8,9 @@ export default (state=intitialState, action) => {
 	case 'CLIENT_ADDED':
 		const updatedClients = state.clientList.concat(action.payload);
 		return {...state, clientList: updatedClients};
+		break;
+	case'CLIENT_SELECTED':
+		return {...state, activeClient: action.payload};
 		break;
 	}
 	return state;

@@ -2,7 +2,7 @@ import React from 'react';
 import ClientForm from './add-client';
 import ClientList from './client-list';
 import SelectClient from './select-client';
-import {addClient} from '../actions/clients';
+import {addClient, selectClient} from '../actions/clients';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
@@ -12,11 +12,12 @@ class Clients extends React.Component {
 		this.state = {
 			newClient: ''
 		};
-		this.handleChange = this.handleChange.bind(this);
+		this.handleNewClientChange = this.handleNewClientChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleSelectClientChange = this.handleSelectClientChange.bind(this);
 	}
 
-	handleChange(event) {
+	handleNewClientChange(event) {
 		this.setState({ newClient: event.target.value });
 	}
 
@@ -28,19 +29,26 @@ class Clients extends React.Component {
 		event.preventDefault();
 	}
 
+	handleSelectClientChange(event) {
+		const client = event.target.value;
+		this.props.selectClient(client);
+	}
+
 	render() {
 		return (
 			<div>
 				<ClientForm 
 					onSubmit={this.handleSubmit} 
-					onChange={this.handleChange} 
+					onChange={this.handleNewClientChange} 
 					newClient={this.state.newClient}
 				/>
 				<ul>
                     
 				</ul>
 				<ClientList clients={this.props.clients.clientList}/>
-				<SelectClient clients={this.props.clients.clientList} />
+				<SelectClient 
+				onChange={this.handleSelectClientChange}
+				clients={this.props.clients.clientList} />
 			</div>
 		);
 	}
@@ -54,7 +62,8 @@ const mapStateToProps = (state) => {
 
 const matchDispatchToProps = (dispatch) => {
 	return bindActionCreators({
-		addClient: addClient
+		addClient: addClient,
+		selectClient: selectClient
 	}, dispatch);
 };
 

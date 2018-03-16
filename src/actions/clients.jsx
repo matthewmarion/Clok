@@ -5,3 +5,11 @@ export const addClient = (client) => {
 		payload: client
 	};
 };
+
+export const selectClient = (client) => {
+	alert('Client selected: ' + client);
+	return {
+		type: 'CLIENT_SELECTED',
+		payload: client
+	};
+};
