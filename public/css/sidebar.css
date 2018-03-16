@@ -1,7 +1,3 @@
-.sidebar-wrapper {
-    display: flex;
-}
-
 #sidebar {
     mind-width: 175px;
     max-width: 175px;
@@ -9,4 +5,5 @@
     background-color: #232831;
     color: white;
     font-size: .9em;
+    float: left;
 }
