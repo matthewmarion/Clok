@@ -7,7 +7,6 @@ export const addClient = (client) => {
 };
 
 export const selectClient = (client) => {
-	alert('Client selected: ' + client);
 	return {
 		type: 'CLIENT_SELECTED',
 		payload: client

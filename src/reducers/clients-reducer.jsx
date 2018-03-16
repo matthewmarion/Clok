@@ -9,7 +9,7 @@ export default (state=intitialState, action) => {
 		const updatedClients = state.clientList.concat(action.payload);
 		return {...state, clientList: updatedClients};
 		break;
-	case'CLIENT_SELECTED':
+	case 'CLIENT_SELECTED':
 		return {...state, activeClient: action.payload};
 		break;
 	}

@@ -23,6 +23,10 @@ class Clients extends React.Component {
 
 	handleSubmit(event) {
 		this.props.addClient(this.state.newClient);
+		const clients = this.props.clients.clientList;
+		if (clients.length === 0) {
+			this.props.selectClient(this.state.newClient);
+		}
 		this.setState({
 			newClient: ''
 		});

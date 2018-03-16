@@ -1,23 +1,24 @@
 import React from 'react';
+import {connect} from 'react-redux';
+
 
 const ActiveClient = (props) => {
+    let activeClient = (props.activeClient == '') ? 'Select a client.' : props.activeClient;
     return (
-        <h3>{props.activeClient}</h3>
+        <h3>{activeClient}</h3>
     );
 }
 
 class Header extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-
-        }
+        this.state = {}
     }
 
     render() {
         return (
             <div className='header-wrapper'>
-                <ActiveClient activeClient={this.props.activeClient}/>
+                <ActiveClient activeClient={this.props.clients.activeClient}/>
             </div>
         );
     }
@@ -25,6 +26,8 @@ class Header extends React.Component {
 
 const mapStateToProps = (state) => {
 	return {
-		activeClient: state.activeClient
+		clients: state.clients
 	};
 };
+
+export default connect(mapStateToProps)(Header);
