@@ -23,8 +23,14 @@ const PauseButton = (props) => {
 
 const Time = (props) => {
 	return (
-		<h3>{props.currentTime}</h3>
+		<h3>{formattedSeconds(props.currentTime)}</h3>
 	);
+};
+
+const formattedSeconds = (sec) => {
+	var date = new Date(null);
+	date.setSeconds(sec);
+	return date.toISOString().substr(11, 8);	
 };
 
 class TrackingForm extends React.Component {
