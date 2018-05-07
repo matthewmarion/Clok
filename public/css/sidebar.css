@@ -6,13 +6,13 @@
     color: white;
     font-size: .9em;
     float: left;
-    padding: .5em;
 }
 
 .sidebar-header {
     overflow: hidden;
     margin-top: .5em;
     margin-bottom: .5em;
+    padding: 0 .5em 0 .5em;
 }
 
 #sidebar .main-logo {
@@ -26,4 +26,27 @@
 #sidebar .logo-text {
     padding-top: .1em;
     font-size: 1.6em;
+}
+
+.clients {
+    padding: .5em .5em 0 .5em;
+}
+
+.active-account {
+    background-color: #3D4657;
+    height: 2.8em;
+    line-height: 2.8em;
+    overflow: hidden;
+    padding: 0 .8em 0 .8em;
+}
+
+.account-name {
+    font-size: 1.15em;
+    overflow: hidden;
+}
+
+.account-pic {
+    padding-top: .7em;
+    float: left;
+    margin-right: .3em;
 }

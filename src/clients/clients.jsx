@@ -40,7 +40,7 @@ class Clients extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="clients">
 				<ClientForm 
 					onSubmit={this.handleSubmit} 
 					onChange={this.handleNewClientChange} 
