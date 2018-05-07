@@ -6,7 +6,7 @@ const Sidebar = () => {
 	return (
 		<nav id="sidebar">
 			<div className="sidebar-header">
-				<h1>Clok.io</h1>
+				<img className="main-logo"src="../public/images/logo.png"/><h1 className="logo-text">clok</h1>
 			</div>
 			<Clients />
 		</nav>

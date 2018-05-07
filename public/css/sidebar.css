@@ -1,9 +1,29 @@
 #sidebar {
-    mind-width: 175px;
-    max-width: 175px;
+    mind-width: 200px;
+    max-width: 200px;
     height: 100vh;
     background-color: #232831;
     color: white;
     font-size: .9em;
     float: left;
+    padding: .5em;
+}
+
+.sidebar-header {
+    overflow: hidden;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+#sidebar .main-logo {
+    width: 20%;
+    height: 20%;
+    float: left;
+    margin-right: .4em;
+    font-family: 'Helvetica';
+}
+
+#sidebar .logo-text {
+    padding-top: .1em;
+    font-size: 1.6em;
 }
