@@ -6,6 +6,7 @@
     color: white;
     font-size: .9em;
     float: left;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .sidebar-header {
@@ -20,16 +21,16 @@
     height: 20%;
     float: left;
     margin-right: .4em;
-    font-family: 'Helvetica';
 }
 
 #sidebar .logo-text {
-    padding-top: .1em;
+    padding-top: .2em;
     font-size: 1.6em;
+    font-weight: bold;
 }
 
 .clients {
-    padding: .5em .5em 0 .5em;
+    padding: 1.5em .5em 0 .8em;
 }
 
 .active-account {
@@ -49,4 +50,24 @@
     padding-top: .7em;
     float: left;
     margin-right: .3em;
+}
+
+.clients-label {
+    color: #72A0EA;
+    font-size: .78em;
+    margin-bottom: .1em;
+}
+
+.client-list {
+    padding: 0;
+    list-style: none;
+}
+
+.client-icon {
+    margin-right: .4em;
+}
+
+.client {
+    color: #9B9B9B;
+    margin: .5em 0;
 }

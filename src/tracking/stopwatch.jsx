@@ -17,10 +17,6 @@ const TrackButton = (props) => {
 	);
 };
 
-const PauseButton = (props) => {
-
-};
-
 const Time = (props) => {
 	return (
 		<h3>{formattedSeconds(props.currentTime)}</h3>

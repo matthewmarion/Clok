@@ -8,13 +8,27 @@ const url = require('url');
 let mainWindow;
 
 function createWindow () {
+	let mainWindow;
 
-	mainWindow = new BrowserWindow({
+	/*mainWindow = new BrowserWindow({
 		width: 800, 
 		height: 600,
 		minHeight: 300,
 		minWidth: 600 
+	});*/
+
+	/* developer open on 2nd screen */
+	let displays = electron.screen.getAllDisplays();
+	let externalDisplay = displays.find((display) => {
+		return display.bounds.x != 0 || display.bounds.y != 0
 	});
+
+	if (externalDisplay) {
+		mainWindow = new BrowserWindow({
+			x: externalDisplay.bounds.x + 50,
+			y: externalDisplay.bounds.y + 50
+		});
+	}
 
 	mainWindow.loadURL(url.format({
 		pathname: path.join(__dirname, 'index.html'),
@@ -23,7 +37,8 @@ function createWindow () {
 	}));
 
 	mainWindow.webContents.openDevTools();
-
+	mainWindow.setMenu(null);
+	
 	mainWindow.on('closed', function () {
 		mainWindow = null;
 	});

@@ -3,11 +3,11 @@ import React from 'react';
 const ClientList = (props) => {
 	return (
 		<div>
-			<ul>
+			<ul className="client-list">
 				{props.clients.map((client, i) =>
-        	    <li key={i}>
-						{client}
-					</li>
+        	    <li className="client" key={i}>
+						<img className="client-icon" src="../public/images/client-icon.png"/> {client}
+				</li>
 				)}
 			</ul>
 		</div>

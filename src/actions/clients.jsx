@@ -6,6 +6,14 @@ export const addClient = (client) => {
 	};
 };
 
+export const removeClient = (client) => {
+	alert('Removed client: ' + client);
+	return {
+		type: 'CLIENT_REMOVED',
+		payload: client
+	};
+}
+
 export const selectClient = (client) => {
 	return {
 		type: 'CLIENT_SELECTED',
