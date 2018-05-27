@@ -5,17 +5,8 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const url = require('url');
 
-let mainWindow;
-
 function createWindow () {
 	let mainWindow;
-
-	/*mainWindow = new BrowserWindow({
-		width: 800, 
-		height: 600,
-		minHeight: 300,
-		minWidth: 600 
-	});*/
 
 	/* developer open on 2nd screen */
 	let displays = electron.screen.getAllDisplays();
@@ -27,6 +18,13 @@ function createWindow () {
 		mainWindow = new BrowserWindow({
 			x: externalDisplay.bounds.x + 50,
 			y: externalDisplay.bounds.y + 50
+		});
+	} else {
+		mainWindow = new BrowserWindow({
+			width: 800, 
+			height: 600,
+			minHeight: 300,
+			minWidth: 600 
 		});
 	}
 
