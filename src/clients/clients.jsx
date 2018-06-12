@@ -42,9 +42,7 @@ class Clients extends React.Component {
 
 	handleRemoveClient(event) {
 		const activeClient = this.props.clients.activeClient;
-		alert(this.props.clients.clientList);
 		this.props.removeClient(activeClient);
-		alert(this.props.clients.clientList);
 		event.preventDefault();
 	}
 
