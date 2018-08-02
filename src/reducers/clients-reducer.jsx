@@ -6,21 +6,29 @@ const intitialState = {
 export default (state=intitialState, action) => {
 	let updatedClients;
 
-	const removeClient = function(array, client) {
+	const removeClientFromList = function(array, client) {
 		const index = array.indexOf(client);
 		array.splice(index, 1);
 	}
-	
+
+	const removeClientFromHeader = function(array, client) {
+		const index = array.indexOf(client);
+		if (array.length == 0) {
+			state.activeClient = '';
+		} else {
+			state.activeClient = array[0];
+		}
+	}
+
 	switch(action.type) {
 	case 'CLIENT_ADDED':
 		updatedClients = state.clientList.concat(action.payload);
-		return {...state, clientList: updatedClients};
+		return {...state, clientList: updatedClients, activeClient: action.payload};
 		break;
 	case 'CLIENT_REMOVED':
 		updatedClients = state.clientList;
-		console.log(updatedClients);
-		removeClient(updatedClients, action.payload);
-		console.log(updatedClients);
+		removeClientFromList(updatedClients, action.payload);
+		removeClientFromHeader(updatedClients, action.payload);
 		return {...state, clientList: updatedClients};
 		break;
 	case 'CLIENT_SELECTED':

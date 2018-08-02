@@ -6,6 +6,8 @@ import RemoveClient from './remove-client';
 import {addClient, selectClient, removeClient} from '../actions/clients';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+const remote = require('electron').remote;
+const url = require('url');
 
 class Clients extends React.Component {
 	constructor(props) {
@@ -21,14 +23,13 @@ class Clients extends React.Component {
 
 	handleNewClientChange(event) {
 		this.setState({ newClient: event.target.value });
+		this.props.setState({ activeClient: event.target.value });
 	}
 
 	handleSubmit(event) {
 		this.props.addClient(this.state.newClient);
 		const clients = this.props.clients.clientList;
-		if (clients.length === 0) {
-			this.props.selectClient(this.state.newClient);
-		}
+		this.props.selectClient(this.state.newClient);
 		this.setState({
 			newClient: ''
 		});
@@ -46,6 +47,21 @@ class Clients extends React.Component {
 		event.preventDefault();
 	}
 
+	openNewClientWindow() {
+		let win = new remote.BrowserWindow({
+			parent: remote.getCurrentWindow(),
+			modal: true,
+			height: 300,
+			width: 300
+		});
+
+		win.loadURL(url.format({
+			pathname: path.join(__dirname, 'index.html'),
+			protocol: 'file:',
+			slashes: true
+		}));
+	}
+
 	render() {
 		return (
 			<div className="clients">
@@ -59,8 +75,9 @@ class Clients extends React.Component {
                     
 				</ul>
 				<ClientList clients={this.props.clients.clientList}/>
-				<SelectClient 
-					onChange={this.handleSelectClientChange}
+				<SelectClient
+					activeClient={this.props.clients.activeClient} 
+					newClient={this.openNewClientWindow}
 					clients={this.props.clients.clientList} />
 				<RemoveClient onClick={this.handleRemoveClient} />
 			</div>

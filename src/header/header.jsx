@@ -15,6 +15,10 @@ class Header extends React.Component {
 		this.state = {};
 	}
 
+	handleClientChange() {
+		
+	}
+
 	render() {
 		return (
 			<div className='header-wrapper'>
