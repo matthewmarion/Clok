@@ -1,8 +1,6 @@
 import React from 'react';
 import ClientForm from './add-client';
 import ClientList from './client-list';
-import SelectClient from './select-client';
-import RemoveClient from './remove-client';
 import {addClient, selectClient, removeClient} from '../actions/clients';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -66,20 +64,12 @@ class Clients extends React.Component {
 		return (
 			<div className="clients">
 				<p className="clients-label">CLIENTS</p>
+				<ClientList clients={this.props.clients.clientList}/>
 				<ClientForm 
 					onSubmit={this.handleSubmit} 
 					onChange={this.handleNewClientChange} 
 					newClient={this.state.newClient}
 				/>
-				<ul>
-                    
-				</ul>
-				<ClientList clients={this.props.clients.clientList}/>
-				<SelectClient
-					activeClient={this.props.clients.activeClient} 
-					newClient={this.openNewClientWindow}
-					clients={this.props.clients.clientList} />
-				<RemoveClient onClick={this.handleRemoveClient} />
 			</div>
 		);
 	}
