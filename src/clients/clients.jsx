@@ -21,7 +21,6 @@ class Clients extends React.Component {
 
 	handleNewClientChange(event) {
 		this.setState({ newClient: event.target.value });
-		this.props.setState({ activeClient: event.target.value });
 	}
 
 	handleSubmit(event) {
@@ -64,10 +63,12 @@ class Clients extends React.Component {
 		return (
 			<div className="clients">
 				<p className="clients-label">CLIENTS</p>
-				<ClientList clients={this.props.clients.clientList}/>
-				<ClientForm 
-					onSubmit={this.handleSubmit} 
-					onChange={this.handleNewClientChange} 
+				<ClientList
+				clients={this.props.clients.clientList}
+				/>
+				<ClientForm
+					onSubmit={this.handleSubmit}
+					onChange={this.handleNewClientChange}
 					newClient={this.state.newClient}
 				/>
 			</div>

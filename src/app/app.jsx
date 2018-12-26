@@ -7,8 +7,12 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<Sidebar />
-				<MainContent />
+				<div className="sidebar">
+					<Sidebar />
+				</div>
+				<div className="main-content">
+					<MainContent />
+				</div>
 			</div>
 		);
 	}

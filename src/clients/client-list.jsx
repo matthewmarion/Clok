@@ -6,7 +6,7 @@ const ClientList = (props) => {
 			<ul className="client-list">
 				{props.clients.map((client, i) =>
         	    <li className="client" key={i}>
-						<img className="client-icon" src="../public/images/client-icon.png"/> {client}
+						<img className="client-icon" src="../public/images/client-icon.png"/> <a>{client}</a>
 				</li>
 				)}
 			</ul>
