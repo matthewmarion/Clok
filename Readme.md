@@ -1,35 +1,39 @@
-
 # Clok
-
-Clok is an application that easily allows you to track the time you spend on your freelance projects. This application is aimed for freelancers with a large variety of clients requiring different jobs.
-
+Clok is an Electron application that helps freelancers track their time and organize their work. It is built using React, Webpack 4, and Jest.
 ![home-clok](https://i.imgur.com/0OPPb6r.png)
 ![home-clok](https://i.imgur.com/WjaUwVY.png)
 **Interactive Prototype**: <https://xd.adobe.com/view/d00ec58e-f740-4902-a29f-4d933c1cb452?fullscreen>
 
+## Getting Started
+To get started with Clok, you can follow these steps:
+
+Clone the repository: `git clone https://github.com/<your-username>/clok.git`
+Install dependencies: `npm install`
+Start the application: `npm start`
+
 ## Features
-Freelancers should be able to easily add `clients, projects and tasks` to create a visual workflow for themselves and the client.
+With Clok, freelancers can easily add clients, projects, and tasks to create a visual workflow for themselves and their clients. Here are some of the main features of the application:
 
-#### Clients
-How to organize your freelance work. This is who you are working for. A client is **REQUIRED**. If you are tracking time for yourself and not a real client, make the client yourself.
+### Clients
+A client is the root of the organization structure and is required for every task you track. You can create a client for an individual or a company and assign pay rates (optional).
 
-    - Root of the organization structure
-    - An individual or a company
-    - Assign pay rates (optional)
+### Projects
+A project should be used whenever a client is hiring you out for more than one assignment. You can create a project under a client and assign pay rates that override the client pay rate (optional).
 
-#### Project
-Projects should be used whenever a client is hiring you out for more than one assignment. A project is not needed in a scenario when you are doing one thing for a client then moving on. 
+### Tasks
+A task is used every time you want to start tracking your session. You can create a task under a project, click the start button to start tracking, and the stop button to stop tracking a started session. You can also create or edit a task by typing in the time intervals manually and assign pay rates that override the project and client pay rate (optional).
 
-    - Created under a client (optional)
-    - Assign pay rates -- overrides client pay rate
+## Scripts
+Here are the available scripts in the package.json:
 
-#### Tasks
-A task is used every time you want to start tracking your session. Tasks are organized under projects.
+```build:dev: builds the application in development mode using Webpack
+start: starts the application using Electron
+build:test: builds the tests using Webpack
+test: runs the tests using Jest
+lint: lints the code using ESLint
+fixlint: lints and fixes the code using ESLint
+```
 
-    - Created under projects.
-    - Click start button to start tracking then
-    - Stop button to stop tracking a started session
-    - A task can be created/edited by typing in the time intervals manually
-    - Assign pay rates -- overrides project && client pay rate
-
+## License
+Clok is open-source software licensed under the MIT License. See the LICENSE file for more information.
 
